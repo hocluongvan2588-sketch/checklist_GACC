@@ -9,6 +9,8 @@ Kho tài liệu phục vụ việc **đánh giá tính khả thi** và thiết k
 
 ## Tài liệu chính
 
+- **[Kế hoạch triển khai](docs/KE_HOACH_TRIEN_KHAI.md)** — **bắt đầu từ đây**: 5 quy tắc bất di bất dịch, MVP =
+  tự động điền BẢNG KÊ TÀI LIỆU, lộ trình 4 giai đoạn (G0→G3), ngân sách, ngưỡng dừng, việc làm trong 7 ngày.
 - **[Báo cáo nghiên cứu tính khả thi](docs/BAO_CAO_KHA_THI.md)** — kết luận, điểm khả thi theo 9 trục, rủi ro,
   kiến trúc đề xuất, ước lượng chi phí, lộ trình và ngưỡng Go/No-Go.
 - **[Quyết định phạm vi tối thiểu](docs/QUYET_DINH_MUC_TOI_THIEU.md)** — thu hẹp xuống đúng nhu cầu thực tế:

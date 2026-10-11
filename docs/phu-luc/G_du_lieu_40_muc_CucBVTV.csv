@@ -1,0 +1,41 @@
+ma,noi_dung,tang,ref,map_148,ai_lam,luu_y
+A1,Giấy chứng nhận đăng ký doanh nghiệp và giấy đăng ký địa điểm kinh doanh/chi nhánh nếu có,T1,0,-,Tìm GPKD - trích tên/địa chỉ/mã số/người đại diện - kiểm tra địa chỉ nhà máy khớp chi nhánh,TÀI LIỆU MỎ NEO: dùng để so khớp chéo mọi tài liệu khác (A.1 / 1 / 13 / D.2)
+A2,Bản cam kết theo mẫu số 2-CV953/BVTV-ATTPMT ngày 13/4/2022,T2,0,13.1-13.2,Đối chiếu đúng mẫu - phát hiện vùng chữ ký và dấu (gợi ý),⚠ Mẫu ban hành 13/4/2022 - thời Lệnh 248. PHẢI xác nhận còn hiệu lực sau Lệnh 280 (1/6/2026)
+A3,Sơ đồ quy trình sản xuất (từ tiếp nhận nguyên liệu đến thành phẩm),T2,0,6.1.1,Tìm sơ đồ - đọc chú thích các bước,Tài liệu A3 và 6.1.1 có thể là MỘT bản dùng cho 2 mã
+A4,Một trong các giấy chứng nhận ATTP theo danh sách Cục BVTV liệt kê,T1,1,1.2.2,Nhận diện loại chứng nhận -> đối chiếu bảng được chấp nhận -> lấy ngày hết hạn -> đối chiếu phạm vi với sản phẩm đăng ký,🔶 Cần bảng ~10 loại: TT 38/2018 - TT 17/2018 - GMP - HACCP - ISO 22000 - IFS - BRC - FSSC 22000 - tương đương. ĐÂY LÀ MỤC TỰ ĐỘNG HÓA TỐT NHẤT
+1,Thông tin cơ bản doanh nghiệp và cơ sở theo biểu mẫu đăng ký (kèm công suất - sản lượng - xuất khẩu),T1,0,1.1.1-1.1.3,Kiểm tra biểu mẫu đủ trường - trích số liệu công suất/sản lượng từ bảng,Phần trích số liệu từ bảng là T2 - hay sai nếu scan bảng kém
+2.1.1,Sơ đồ tổng thể nhà máy ghi rõ tên các khu vực hoạt động,T2,0,2.1.1,Tìm sơ đồ - đọc tên khu vực,
+2.1.2,Ảnh khu vực nhà máy và môi trường xung quanh (thể hiện nguồn ô nhiễm nếu có),T2,0,2.1.2-2.1.4,Phát hiện có ảnh - đọc chú thích nếu có,Máy KHÔNG đánh giá được nguồn ô nhiễm thực tế
+2.2,Sơ đồ nhà xưởng thể hiện luồng người - nguyên liệu - nước - sản xuất và khu vực vệ sinh,T2,0,2.2.1-2.2.4,Tìm sơ đồ luồng - đọc chú thích,Gộp 4 mục của bản 148 thành 1
+3.1,Danh sách thiết bị và cơ sở vật chất chính kèm công suất thiết kế,T2,0,3.1.1-3.1.2,Trích bảng thiết bị - đối chiếu tổng công suất với mục 1,Đối chiếu số công suất là phần tự động hóa được
+3.2,Mô tả kiểm soát nhiệt độ và cách theo dõi nếu có kho lạnh,T2,0,3.2.2-3.2.3,Có điều kiện theo thuộc tính case,NHÁNH ĐIỀU KIỆN: chỉ yêu cầu nếu có kho lạnh
+4.1.1,Ảnh nguồn nước tự cấp/công trình cấp nước phụ và biện pháp bảo vệ nếu có,T2,0,4.1-4.2,Có điều kiện - phát hiện ảnh và mô tả,NHÁNH ĐIỀU KIỆN
+4.1.2,Kế hoạch và kết quả giám sát nước dùng trong sản xuất (đá/hơi nước nếu tiếp xúc trực tiếp),T2,0,4.4-4.5,Tìm kế hoạch - trích điểm lấy mẫu/chỉ tiêu/phương pháp/tần suất - tìm phiếu kết quả,
+4.1.3,Thông tin phụ gia lò hơi nếu hơi nước tiếp xúc trực tiếp với thực phẩm,T2,1,4.6,Cần danh mục phụ gia lò hơi được phép để đối chiếu,🔶 NHÁNH ĐIỀU KIỆN
+5.1,Quy trình/biện pháp tiếp nhận nguyên liệu và phụ gia + tiêu chuẩn kiểm tra + mẫu phiếu tiếp nhận,T2,0,5.1.1-5.1.3,Tìm SOP và mẫu phiếu đã điền (bản ghi),Cả SOP và phiếu: cần tách riêng 'thiếu quy trình' / 'thiếu phiếu'
+5.2.1,Báo cáo kiểm nghiệm mới nhất về sự phù hợp với tiêu chuẩn ATTP Trung Quốc nếu áp dụng,T2,1,5.2.4,Tìm phiếu kết quả - trích mẫu/ngày/chỉ tiêu/đơn vị thử nghiệm,🔶 Cần bảng chỉ tiêu theo mặt hàng. Tài liệu ghi rõ: chưa rõ chỉ tiêu thì hỏi Vexim/Cục TRƯỚC khi đặt xét nghiệm
+5.2.2,Tài liệu về vùng cung cấp nguyên liệu và điều kiện của nhà cung cấp,T2,1,5.2.1-5.2.3,Trích danh sách NCC/vùng - đối chiếu vùng với danh sách dịch hại cần giám sát,🔶 'Yêu cầu dịch hại cụ thể cần xác nhận theo sản phẩm'
+5.3,Danh sách phụ gia thực phẩm sử dụng (tên - mục đích - lượng),T2,1,5.3.1-5.3.2,Nếu có bảng phụ gia được phép: đối chiếu tên/công đoạn/lượng,🔶 NHÁNH ĐIỀU KIỆN
+5.4.1,Tài liệu chứng minh bao bì trong và ngoài phù hợp với sản phẩm,T2,0,5.4.1,Tìm tài liệu quy cách/giấy tờ bao bì,
+5.4.2,Mẫu nhãn của thành phẩm dự kiến xuất khẩu,T1,0,5.4.2,Phát hiện có mẫu nhãn/bản thiết kế/ảnh nhãn,Đối chiếu nội dung nhãn (T2) cần template theo sản phẩm
+6.1.1,Sơ đồ quy trình sản xuất + các điểm kiểm soát tới hạn + biện pháp kiểm soát mối nguy,T2,0,6.1.1-6.1.3,Tìm sơ đồ và bảng CCP - đọc giới hạn/biện pháp,Có thể trùng tài liệu A3
+6.1.2,Nếu áp dụng HACCP: bảng phân tích mối nguy - kế hoạch - mẫu hồ sơ CCP - xử lý sai lệch - xác minh,T2,0,6.1.2-6.1.6,Tìm 5 thành phần - parse ngày cập nhật gần nhất,NHÁNH ĐIỀU KIỆN: 'nếu đang dùng hệ thống khác hoặc chưa rõ -> ghi chú để Vexim đối chiếu'
+6.2,Báo cáo kiểm nghiệm độc tố nấm mốc trong sản phẩm sản xuất - chế biến và lưu kho,T2,1,6.2.1-6.2.3,Tìm phiếu - trích analyte/kết quả/ngày - SO SÁNH với bảng giới hạn,🔶 Phần đối chiếu giới hạn là T1 NẾU CÓ BẢNG GIỚI HẠN. Đây là mục có giá trị tự động hóa cao nhất nhóm B6
+6.3,Quy trình sản xuất - kế hoạch giám sát và kết quả giám sát phụ gia/chất tăng cường dinh dưỡng,T2,0,6.3.1-6.3.2,Có điều kiện,NHÁNH ĐIỀU KIỆN
+7.1,Quy trình vệ sinh và khử trùng + phương pháp - tần suất - cách kiểm tra hiệu quả + nhật ký mẫu,T2,0,7.1-7.4,Tìm SOP VÀ nhật ký đã điền - parse ngày,Checklist đòi cả quy trình lẫn nhật ký mẫu: tách riêng 2 phần
+8.1,Mô tả quản lý - sử dụng và bảo quản hóa chất,T2,0,8.1.1-8.1.2,Trích danh mục hóa chất và nơi lưu/cách cấp phát,Dùng làm tham chiếu đối chiếu với 7.1
+8.2,Quy trình ngăn ngừa dị vật và hồ sơ xử lý liên quan,T2,0,8.2.1-8.2.3,Tìm SOP và hồ sơ xử lý/kiểm tra thiết bị (sàng - nam châm - dò kim loại),
+8.3,Phương pháp và sơ đồ bố trí kiểm soát côn trùng - chuột + hồ sơ năng lực nếu thuê ngoài,T2,0,8.3.1-8.3.3,Tìm sơ đồ bẫy + nhật ký - nếu thuê ngoài: tìm chứng nhận và kiểm tra hạn,NHÁNH ĐIỀU KIỆN: tự làm hay thuê ngoài
+8.4,Quy trình quản lý chất thải và hồ sơ xử lý,T2,0,8.4.1-8.4.3,Tìm SOP và hồ sơ thu gom,
+9.1,Quy trình truy xuất và thu hồi + lấy một mã lô thành phẩm làm ví dụ truy ngược,T3,0,9.1.1-9.1.4,Quy trình: máy tìm được. Ví dụ mã lô: máy CHỈ gợi ý được một lô có đủ dữ liệu,MỤC KHÓ: phần 'ví dụ mã lô thật' không thể tự động tạo
+9.2,Quy trình quản lý hàng nhập kho và xuất kho,T2,0,9.2.1-9.2.2,Tìm biểu mẫu/nhật ký nhập-xuất kho,
+10.1,Quy định khám sức khỏe trước làm việc và định kỳ + mẫu hồ sơ,T2,0,10.1.1-10.1.2,Đối chiếu danh sách nhân sự vs hồ sơ khám - chỉ lấy NGÀY không lấy chi tiết y tế,🔒 DỮ LIỆU CÁ NHÂN: tài liệu ghi rõ 'không gửi thêm dữ liệu cá nhân không cần thiết' -> hệ thống phải che/ẩn khi gửi AI và khi xuất
+10.2,Kế hoạch đào tạo hằng năm - nội dung - đánh giá và hồ sơ đào tạo nhân viên,T2,0,10.2.1-10.2.2,Parse năm kế hoạch - tìm danh sách tham dự và kết quả đánh giá,
+10.3,Hồ sơ đào tạo nhân sự quản lý về kiểm dịch và ATTP + sẵn sàng giải trình khi kiểm tra tại chỗ,T3,0,10.3.1-10.3.3,Phần hồ sơ: máy tìm. Phần 'sẵn sàng giải trình': KHÔNG LAM,PHẦN GIẢI TRÌNH LÀ CON NGƯỜI - tuyệt đối không giao máy
+11.1,Danh mục chỉ tiêu - phương pháp và tần suất kiểm tra thành phẩm,T2,1,11.1-11.3,Cần danh mục chỉ tiêu theo mặt hàng để đối chiếu,🔶
+11.2,Nếu có phòng thử nghiệm nội bộ: hồ sơ năng lực. Nếu thuê ngoài: hồ sơ năng lực phòng được thuê,T1,0,11.5-11.6,Tìm chứng nhận - kiểm tra hạn - đối chiếu phạm vi với chỉ tiêu cần kiểm,NHÁNH ĐIỀU KIỆN: chỉ nộp MỘT nhánh. Máy kiểm tra hạn rất tốt
+12.1,Danh sách dịch hại kiểm dịch Trung Quốc quan tâm + kế hoạch/hồ sơ giám sát,T2,1,12.1.1-12.1.3,Cần danh sách dịch hại chuẩn theo sản phẩm rồi mới đối chiếu được,🔶 QUAN TRỌNG NHẤT nhóm B12 - danh sách thay đổi theo protocol và phải cập nhật
+12.2,Hồ sơ dịch hại phát hiện trong sản xuất/lưu kho + kết quả nhận diện (nếu thuê: hồ sơ đơn vị),T2,0,12.2.1-12.2.2,Tìm hồ sơ phát hiện và báo cáo nhận diện - kiểm tra hạn chứng nhận đơn vị,⚠ Tài liệu ghi rõ: 'không tự tạo hồ sơ âm tính' -> hệ thống PHẢI ghi 'chưa thấy trong hồ sơ hiện có' chứ không tự sinh bản ghi
+12.3,Hồ sơ thực hiện biện pháp phòng trừ dịch hại ở khu vực sản xuất và lưu kho,T2,0,12.3.1-12.3.3,Parse 4-6 trường bắt buộc: ngày/vị trí/cách làm/hóa chất/người/KQ - đếm số lần - tính khoảng thời gian,Kiểm tra đủ trường là việc máy làm khá
+12.4,Phương pháp hun trùng và hồ sơ năng lực đơn vị/người thực hiện nếu cần hun trùng,T3,1,12.4.1-12.4.4,Cần yêu cầu cụ thể của TQ về hun trùng mới đối chiếu được,🔶 NHÁNH ĐIỀU KIỆN + phần đối chiếu yêu cầu TQ là người
+13,Bản tuyên bố theo mẫu số 13 đính kèm tài liệu Cục BVTV,T2,0,13.1-13.4,Đối chiếu đúng mẫu - phát hiện chữ ký và dấu (gợi ý),⚠ Dùng ĐÚNG mẫu Cục cung cấp - không tự soạn thay
