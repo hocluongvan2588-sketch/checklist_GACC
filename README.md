@@ -11,6 +11,9 @@ Kho tài liệu phục vụ việc **đánh giá tính khả thi** và thiết k
 
 - **[Báo cáo nghiên cứu tính khả thi](docs/BAO_CAO_KHA_THI.md)** — kết luận, điểm khả thi theo 9 trục, rủi ro,
   kiến trúc đề xuất, ước lượng chi phí, lộ trình và ngưỡng Go/No-Go.
+- **[Quyết định phạm vi tối thiểu](docs/QUYET_DINH_MUC_TOI_THIEU.md)** — thu hẹp xuống đúng nhu cầu thực tế:
+  *AI chỉ soi thiếu, không kết luận*; chia checklist 2 tầng; thiết kế lệch về lỗi an toàn; 3 phương án
+  (không xây / công cụ nhẹ / nền tảng đầy đủ) kèm nỗ lực & chi phí.
 
 ## Phụ lục
 
