@@ -1,0 +1,271 @@
+# =============================================================================
+# MINH HOA CAU TRUC REQUIREMENT PACK — KHONG DUOC DUNG LAM CAN CU NGHIEP VU
+# =============================================================================
+# Muc dich: chung minh rang co the mo ta product scope bang Cau Hinh (khong can
+# sua code xử ly case). Tat ca noi dung nghiep vu o day la GIA/CHO (placeholder)
+# de minh hoa truong du lieu va cach bieu dien dieu kien ap dung.
+#
+# TRUOC KHI PUBLISH, TUNG requirement PHAI duoc:
+#   1) Doi chieu voi van ban goc hien hanh (Lenh 280 + huong dan 2026 + Thong bao 219/2025)
+#   2) Gan source_ref toi ban ghi trong Dang ky nguon tham chieu (Phu luc D)
+#   3) Kiem tra chuyen mon + phe duyet (xem truong approval)
+#   4) Neu KHONG co nguon A/B: bat buoc gan nhan `internal_process_unverified`
+# =============================================================================
+
+pack:
+  id: "PACK-CN-EDIBLE-GRAIN"
+  name: "Co so san xuat ngu coc an duoc xuat khau sang Trung Quoc"
+  language: "vi"
+  market:
+    jurisdiction: "CN"
+    destination: "China (mainland)"
+    competent_authority_vn: "TODO: Cuc Trong trot & Bao ve thuc vat (can xac minh bang van ban)"
+  program: "GACC overseas food manufacturer registration (Decree 280 regime)"
+  product_scope:
+    category: "edible_grains"
+    products: ["rice", "maize", "other_milled_grain"]   # gia/cho
+    minh_hoa_note: "Danh muc dong: can co canh bao khi GACC dieu chinh (vd. nhom 'gao')"
+  facility_types: ["processing", "milling", "packing", "storage"]
+  status: "draft"          # draft | review | approved | published | retired
+  version: "0.1.0-draft"
+  effective_date: null     # bat buoc khi publish
+  review_date: null        # de xuat: +3 thang ke tu ngay publish
+  compiled_by: null
+  reviewed_by: null
+  approved_by: null
+  published_at: null
+  sources:                 # tro vao Dang ky nguon tham chieu (Phu luc D)
+    - SRC-001
+    - SRC-002
+    - SRC-003
+
+# -----------------------------------------------------------------------------
+# Thuoc tinh dau vao cua case: dung trong applicability_rule
+# Neu thieu gia tri -> requirement co rule phu thuoc phai ra trang thai `Can lam ro`
+# -----------------------------------------------------------------------------
+case_attributes:
+  - key: "product_group"
+    type: "enum"
+    values: ["rice", "maize", "other_grain"]
+    required: true
+  - key: "process_steps"
+    type: "multi_enum"
+    values: ["drying", "milling", "polishing", "color_sorting", "packing", "fumigation"]
+    required: true
+  - key: "has_cold_storage"
+    type: "boolean"
+    required: true
+  - key: "has_fumigation"
+    type: "boolean"
+    required: true
+  - key: "uses_additives"
+    type: "boolean"
+    required: true
+  - key: "packing_contact_material"
+    type: "enum"
+    values: ["plastic", "paper", "woven_bag", "other"]
+    required: false
+  - key: "export_mode"
+    type: "enum"
+    values: ["bulk", "retail_packed"]
+    required: true
+
+# -----------------------------------------------------------------------------
+# Tap toan tu han che cho MVP (de test, de giai thich)
+# -----------------------------------------------------------------------------
+rule_operators_allowed:
+  ["EQUALS", "IN", "NOT_IN", "AND", "OR", "NOT", "IS_KNOWN", "IS_UNKNOWN", "CONTAINS"]
+
+requirements:
+  # ---------------- Nhom 1: Co so / doanh nghiep ----------------
+  - code: "FAC-01"
+    title: "Giay to phap ly cua co so san xuat"
+    description: "TODO: mo ta chinh xac theo van ban hien hanh"
+    applicability:
+      scope_type: "facility"                 # facility|workshop|material|product|shipment|conditional
+      rule: { op: "IS_KNOWN", attr: "facility_legal_name" }
+    evidence_hints:
+      document_types: ["business_registration", "establishment_license"]
+      suggested_files: ["Giay chung nhan dang ky kinh doanh", "Giay chung nhan co so du dieu kien ATTP"]
+      fields_to_check: ["legal_name", "address", "legal_representative", "issue_date", "expiry_date"]
+    source_ref: "SRC-001"
+    level: "mandatory"                       # mandatory|conditional|internal_reference
+    priority: "P0"
+    review_note: "MINH HOA — can doi chieu Lenh 280 va huong dan trien khai 2026"
+
+  - code: "FAC-02"
+    title: "Thong tin nguoi dai dien va nguoi lien he nhat quan tren to bo ho so"
+    description: "Phat hien loai 'conflict' (muc 6 FR-06): so khop chuoi giua cac tai lieu"
+    applicability:
+      scope_type: "facility"
+      rule: { op: "IS_KNOWN", attr: "facility_legal_name" }
+    evidence_hints:
+      document_types: ["business_registration", "application_form", "haccp_certificate"]
+      cross_document_consistency: ["legal_name", "address", "legal_representative"]
+    source_ref: "SRC-001"
+    level: "mandatory"
+    priority: "P0"
+    review_note: "Chi so khop du lieu — KHONG can dien giai phap ly, phu hop MVP"
+
+  # ---------------- Nhom 2: Nha xuong / quy trinh ----------------
+  - code: "PRC-01"
+    title: "So do mat bang, nha xuong va luu do cong nghe"
+    description: "TODO: mo ta theo van ban hien hanh"
+    applicability:
+      scope_type: "workshop"
+      rule: { op: "IS_KNOWN", attr: "facility_legal_name" }
+    evidence_hints:
+      document_types: ["floor_plan", "process_flow_diagram"]
+      fields_to_check: ["area", "line_count", "revision_date"]
+    source_ref: "SRC-001"
+    level: "mandatory"
+    priority: "P0"
+
+  - code: "PRC-02"
+    title: "He thong quan ly an toan thuc pham (HACCP/ISO 22000 tuong duong)"
+    description: "TODO"
+    applicability:
+      scope_type: "workshop"
+      rule: { op: "IS_KNOWN", attr: "facility_legal_name" }
+    evidence_hints:
+      document_types: ["haccp_certificate", "iso22000_certificate"]
+      fields_to_check: ["certificate_no", "scope", "issue_date", "expiry_date", "accreditation_body"]
+    expiry_check:
+      field: "expiry_date"
+      behaviour: "flag_if_expired_or_within_90_days"
+    source_ref: "SRC-001"
+    level: "mandatory"
+    priority: "P0"
+
+  # ---------------- Nhom 3: Co dieu kien (vi du thiet ke) ----------------
+  - code: "PRC-03"
+    title: "Quy trinh va ho so hun trùng (neu co)"
+    description: "Ap dung CHI KHI case khai co cong doan hun trùng"
+    applicability:
+      scope_type: "conditional"
+      rule: { op: "EQUALS", attr: "has_fumigation", value: true }
+    evidence_hints:
+      document_types: ["fumigation_record", "chemical_list", "operator_certificate"]
+      fields_to_check: ["substance", "dosage", "exposure_time", "date"]
+    source_ref: "SRC-002"
+    level: "conditional"
+    priority: "P1"
+    review_note: "Rule don gian, test duoc — mau cho rule engine MVP"
+
+  - code: "PRC-04"
+    title: "Quan ly kho lanh (neu co)"
+    description: "Ap dung khi co kho lanh; can kiem tra them neu san pham thuoc dien GACC quan ly kho"
+    applicability:
+      scope_type: "conditional"
+      rule: { op: "EQUALS", attr: "has_cold_storage", value: true }
+    evidence_hints:
+      document_types: ["cold_storage_layout", "temperature_log"]
+    source_ref: "SRC-002"
+    level: "conditional"
+    priority: "P1"
+
+  # ---------------- Nhom 4: Nguyen lieu / nha cung cap ----------------
+  - code: "MAT-01"
+    title: "Vung nguyen lieu va truy xuat nguon goc"
+    description: "TODO"
+    applicability:
+      scope_type: "material"
+      rule: { op: "IS_KNOWN", attr: "raw_material_sources" }
+    evidence_hints:
+      document_types: ["supplier_list", "traceability_record", "purchase_contract"]
+    source_ref: "SRC-003"
+    level: "mandatory"
+    priority: "P1"
+
+  # ---------------- Nhom 5: San pham (khac nhau theo nhom hang) ----------------
+  - code: "PRD-01"
+    title: "Chi tieu kim loai nang (cadimi) — rieng nhom gao"
+    description: "Yeu to rui ro duoc neu trong tai lieu danh gia rui ro doi voi gao"
+    applicability:
+      scope_type: "product"
+      rule: { op: "EQUALS", attr: "product_group", value: "rice" }
+    evidence_hints:
+      document_types: ["lab_report"]
+      fields_to_check: ["analyte", "result", "unit", "method", "lab_name", "report_date", "lot_no"]
+    source_ref: "SRC-004"
+    level: "conditional"
+    priority: "P0"
+    review_note: "MINH HOA F2: cung 'ngu coc' nhung requirement khac nhau theo san pham"
+
+  - code: "PRD-02"
+    title: "Khai bao/ket luan ve bien doi gen (rieng nhom gao)"
+    description: "TODO"
+    applicability:
+      scope_type: "product"
+      rule: { op: "EQUALS", attr: "product_group", value: "rice" }
+    evidence_hints:
+      document_types: ["lab_report", "declaration_letter"]
+      fields_to_check: ["gmo_target", "result", "method", "report_date"]
+    source_ref: "SRC-004"
+    level: "conditional"
+    priority: "P1"
+
+  - code: "PRD-03"
+    title: "Nhan va bao bi — ma dang ky phai the hien tren bao bi/nhan"
+    description: "TODO: doi chieu quy dinh hien hanh ve the hien ma dang ky"
+    applicability:
+      scope_type: "product"
+      rule: { op: "IN", attr: "export_mode", value: ["retail_packed", "bulk"] }
+    evidence_hints:
+      document_types: ["label_artwork", "product_label_photo", "packaging_spec"]
+      fields_to_check: ["registration_no", "product_name", "origin", "net_weight", "lot_format"]
+    source_ref: "SRC-001"
+    level: "mandatory"
+    priority: "P0"
+
+  # ---------------- Nhom 6: Lo hang / xuat khau ----------------
+  - code: "LOT-01"
+    title: "Ho so kiem nghiem theo lo (neu pack yeu cau)"
+    description: "TODO"
+    applicability:
+      scope_type: "shipment"
+      rule: { op: "IS_KNOWN", attr: "shipment_lot_no" }
+    evidence_hints:
+      document_types: ["lab_report", "phytosanitary_certificate", "packing_list"]
+      fields_to_check: ["lot_no", "quantity", "shipment_date", "container_no"]
+    source_ref: "SRC-003"
+    level: "internal_reference"   # can Vexim xac nhan truoc khi thanh mandatory
+    priority: "P2"
+    review_note: "Trang thai noi bo/cho xac minh — KHONG duoc tron vao requirement co nguon"
+
+# -----------------------------------------------------------------------------
+# Cau hinh AI cho pack nay (tach khoi code)
+# -----------------------------------------------------------------------------
+ai_config:
+  document_types:
+    - business_registration
+    - establishment_license
+    - haccp_certificate
+    - iso22000_certificate
+    - floor_plan
+    - process_flow_diagram
+    - lab_report
+    - phytosanitary_certificate
+    - label_artwork
+    - product_label_photo
+    - packaging_spec
+    - supplier_list
+    - traceability_record
+    - fumigation_record
+    - temperature_log
+    - packing_list
+    - unknown
+  citation_policy:
+    require_locator: true
+    quote_match_required: true
+    quote_match_fuzzy_ratio_min: 0.9
+    on_quote_mismatch: "discard_evidence_and_log"
+    max_evidence_per_requirement: 5
+  retrieval:
+    filter_by_document_type: true
+    top_k: 8
+    min_score: 0.15          # can hieu chinh tren golden set (Phu luc E)
+  guardrails:
+    allow_auto_status: []    # rong = KHONG bao gio tu dong xac nhan
+    forbid_value_fabrication: true
+    on_missing_requirement_input: "can_lam_ro"

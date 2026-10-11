@@ -1,1 +1,32 @@
 # checklist_GACC
+
+Kho tài liệu phục vụ việc **đánh giá tính khả thi** và thiết kế nền tảng AI hỗ trợ rà soát hồ sơ đa sản phẩm
+(thị trường × chương trình/quy định × nhóm hàng × loại cơ sở × phiên bản yêu cầu) cho Vexim.
+
+> ⚠️ Tài liệu trong kho này là **đánh giá sơ bộ để lập kế hoạch**, không phải tư vấn pháp lý và **không phải**
+> nội dung nghiệp vụ đã được phê duyệt. Mọi yêu cầu quy định phải được Vexim/chuyên gia xác minh với văn bản
+> gốc trước khi dùng.
+
+## Tài liệu chính
+
+- **[Báo cáo nghiên cứu tính khả thi](docs/BAO_CAO_KHA_THI.md)** — kết luận, điểm khả thi theo 9 trục, rủi ro,
+  kiến trúc đề xuất, ước lượng chi phí, lộ trình và ngưỡng Go/No-Go.
+
+## Phụ lục
+
+| Phụ lục | Nội dung |
+| --- | --- |
+| [A](docs/phu-luc/A_bo_cau_hoi_vexim_va_de_xuat_tra_loi.md) | 12 câu hỏi cần Vexim chốt + **đáp án đề xuất** để chốt phạm vi nhanh |
+| [B](docs/phu-luc/B_mo_hinh_chi_phi.csv) | Mô hình chi phí: 3 kịch bản khối lượng, OPEX/CAPEX, công thức |
+| [C](docs/phu-luc/C_mau_requirement_pack.yaml) | Mẫu cấu trúc requirement pack (minh hoạ cấu hình — **chưa xác minh**) |
+| [D](docs/phu-luc/D_dang_ky_nguon_tham_chieu.md) | Đăng ký nguồn tham chiếu, phân loại độ tin cậy A/B/C, quy tắc quản trị nguồn |
+| [E](docs/phu-luc/E_ke_hoach_danh_gia_chat_luong_AI.md) | Kế hoạch đo chất lượng AI (golden set, chỉ số, ngưỡng, test bất biến) |
+
+## Ba điểm cần nhớ
+
+1. **Lệnh 248 đã hết hiệu lực** (thay bởi Lệnh 280, có hiệu lực 1/6/2026). Bất kỳ checklist/pack nào xây trên
+   Lệnh 248 đều cần biên soạn lại trước khi dùng.
+2. Danh mục hàng hóa phải "đề xuất chính thức" nay là **danh mục động** (hiện 17 nhóm, gồm ngũ cốc dùng làm
+   thực phẩm) và được tinh chỉnh theo sản phẩm — ví dụ nhóm gạo có các yếu tố rủi ro riêng.
+3. Rủi ro lớn nhất **không nằm ở AI**: đó là nội dung quy định thay đổi, chất lượng bản scan, và việc thiếu
+   chủ sở hữu nội dung (người biên soạn/kiểm tra/duyệt requirement pack).

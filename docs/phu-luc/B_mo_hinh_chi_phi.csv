@@ -1,0 +1,48 @@
+phan,hang_muc,don_vi,kich_ban_thap,kich_ban_co_so,kich_ban_cao,cong_thuc,ghi_chu
+GIA_DINH,So case moi,case/thang,10,30,80,,Vexim can dien so that
+GIA_DINH,So file trung binh moi case,file/case,20,35,50,,Bao gom ca ban scan va ban dich
+GIA_DINH,So trang trung binh moi file,trang/file,4,6,8,,PDF scan thuong 1-3 trang; ho so day hon
+GIA_DINH,Ty le can OCR (scan khong co text layer),%,60,75,85,,Anh huong truc tiep den chi phi va rui ro R4
+GIA_DINH,Dung luong trung binh moi file,MB,2,3,5,,
+KHOI_LUONG,Tong trang can xu ly,trang/thang,800,6300,32000,=case*file*trang,Chua nhan ty le can OCR
+KHOI_LUONG,Tong trang can OCR,trang/thang,480,4725,27200,=tong_trang*ty_le_OCR,
+KHOI_LUONG,Dung luong luu tru moi thang,GB/thang,0.4,3.15,20,=case*file*MB/1024,
+KHOI_LUONG,Dung luong luy ke nam 1,GB,4.8,37.8,240,=GB_thang*12,
+OPEX_OCR,OCR tho - managed (1.50 USD/1000 trang),USD/thang,0.72,7.09,40.80,=trang_OCR*1.5/1000,Gia tham chieu thi truong 2026
+OPEX_OCR,Phan tich layout/khoi (10 USD/1000 trang),USD/thang,4.80,47.25,272.00,=trang_OCR*10/1000,Khuyen nghi dung cho ho so co bang bieu
+OPEX_OCR,Trich xuat tuy bien (30 USD/1000 trang),USD/thang,14.40,141.75,816.00,=trang_OCR*30/1000,Chi khi can form parser rieng
+OPEX_OCR,Tuy chon self-host GPU (thue),USD/thang,250,350,600,,Thay the cac dong managed o tren
+OPEX_LLM,Token dau vao uoc tinh,token/case,300000,450000,700000,Bao gom 1 lan chay lai,Sau khi truy xuat chi ~20-30% so trang vao ngu canh
+OPEX_LLM,Token dau ra uoc tinh,token/case,30000,45000,80000,,
+OPEX_LLM,Model hang hieu qua (2 USD / 10 USD moi trieu token),USD/thang,9.00,40.50,176.00,=(in*2+out*10)/1e6*case,
+OPEX_LLM,Model hang frontier (5 USD / 25 USD moi trieu token),USD/thang,22.50,101.25,440.00,=(in*5+out*25)/1e6*case,Dung cho requirement kho
+OPEX_KHAC,Luu tru object storage (0.023 USD/GB/thang),USD/thang,0.06,0.44,2.76,=GB*0.023,Tinh tren dung luong luy ke trung binh
+OPEX_KHAC,Co so du lieu + backup,USD/thang,60,90,200,,
+OPEX_KHAC,Giam sat - log - cong cu,USD/thang,50,100,150,,
+OPEX_KHAC,GPU self-host neu chon self-host,USD/thang,0,0,0,,"Da tinh o khoi OCR, khong cong them"
+TONG_OPEX,Tong thap nhat (OCR managed + LLM hieu qua),USD/thang,124,285,769,=OCR_tho+layout+LLM_eff+luu_tru+DB+tooling,
+TONG_OPEX,Tong kich ban co so (layout + LLM hieu qua),USD/thang,300,528,1241,=OCR_layout+LLM_eff+luu_tru+DB+tooling,Khuyen nghị lap ke hoach theo nay
+TONG_OPEX,Tong cao (trich xuat tuy bien + LLM frontier),USD/thang,900,1200,2400,=OCR_custom+LLM_frontier+luu_tru+DB+tooling,
+DON_GIAI,Chi phi AI + OCR moi case (kich ban co so),USD/case,3.45,3.45,3.45,=528/30 (o kich ban co so),Vai USD/case - khong dang ke so voi gio cong
+DON_GIAI,Chi phi AI + OCR moi case (bien dong),USD/case,2.00,3.45,15.00,,Khoang nay de lap ke hoach
+CAPEX,PoC do chat luong AI,person-month,2,2.5,3,,2-3 nguoi trong 4-6 tuan
+CAPEX,Nen tang: tenant/RBAC/khach hang/case/tai lieu/audit,person-month,6,7.5,9,,
+CAPEX,Pipeline tai lieu + OCR/parse + hang doi,person-month,4,5,6,,
+CAPEX,AI: phan loai/trich xuat/mapping/validator trich dan,person-month,5,6.5,8,,
+CAPEX,Rule engine ap dung + UI ly giai,person-month,2,2.5,3,,
+CAPEX,Pack admin + workflow duyet + phien ban hoa,person-month,3,3.5,4,,
+CAPEX,Ma tran doi chieu + yeu cau bo sung + export + dashboard,person-month,4,5,6,,
+CAPEX,Eval harness + golden set + bao cao chat luong,person-month,2,2.5,3,,
+CAPEX,Bao mat/kiem thu phan quyen cheo tenant/DR,person-month,2,2.5,3,,
+CAPEX,Bien soan + duyet pack dau tien (BA + dev ho tro),person-month,2,2.5,3,,Chua tinh 15-25 ngay cong chuyen gia Vexim
+CAPEX,TONG MVP,person-month,32,40,48,,Doi 5-6 nguoi ~ 6-9 thang
+CAPEX,Don gia blended gia dinh,USD/person-month,2500,3500,4500,,Thuong luong theo nha cung cap
+CAPEX,CHI PHI PHAN MEM MVP,USD,80000,140000,216000,=PM*don_gia,"Uoc luong bac do lon, sai so +-50%"
+CAPEX,MVP mong (cat: cong khach hang, Word, tich hop),person-month,12,15,"18,,Khuyen nghi can nhac lam truoc khi dau tu dot 2"
+CAPEX,CHI PHI MVP MONG,USD,30000,52500,81000,=PM*don_gia,
+LOI_ICH,Gio lap danh muc + phan loai/case hien tai,gio,6,8,12,,Vexim can dien
+LOI_ICH,Gio/case sau khi co he thong,gio,2,3,5,,Bao gom thoi gian kiem chung AI
+LOI_ICH,So case/nam,case/nam,80,150,400,,Vexim can dien
+LOI_ICH,Chi phi gio cong chuyen vien full-loaded,USD/gio,10,15,25,,Vexim can dien
+LOI_ICH,Tiet kiem gio cong/nam,USD/nam,3200,11250,70000,=(gio_truoc-gio_sau)*case*don_gia,Chi tinh tiet kiem gio cong
+LOI_ICH,Gia tri tang them can dinh luong rieng,USD/nam,0,0,0,So case xu ly duoc them; giam vong lap bo sung; giam rui ro sai sot,Day la phan thuong quyet dinh business case
