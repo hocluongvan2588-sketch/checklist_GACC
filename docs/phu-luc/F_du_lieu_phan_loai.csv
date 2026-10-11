@@ -1,0 +1,149 @@
+ma,nhom,noi_dung,tang,ref,ai_lam,ghichu
+A.1,A - Thong tin doanh nghiep,Xác định tên pháp lý - địa chỉ - liên hệ,T2,0,Trích từ GPKD/biểu mẫu và so khớp chéo giữa các tài liệu,Cảnh báo lệch tên/địa chỉ giữa các file
+A.2,A - Thong tin doanh nghiep,Mặt hàng và phạm vi sản phẩm được phép theo thỏa thuận/nghị định thư,T3,1,Máy chỉ liệt kê những gì doanh nghiệp khai - cần danh mục được phép,Không có bảng tham chiếu thì LLM sẽ tự điền phạm vi
+A.3,A - Thong tin doanh nghiep,Chỉ định người phụ trách hồ sơ và đầu mối cơ quan,T1,0,Đọc trường trong biểu mẫu,Thiếu trường thì báo thiếu
+A.4,A - Thong tin doanh nghiep,Hồ sơ tiếng Trung hoặc Anh - nhất quán giữa biểu mẫu và bản dịch,T2,0,Nhận diện ngôn ngữ và so khớp tên/số giữa bản gốc và bản dịch,Dịch máy sai có thể tạo cảnh báo giả
+A.5,A - Nguyen tac lap ho so,Đánh số từng phụ lục theo mã mục,T1,0,Kiểm tra mã trên nhãn/trang đầu và sinh mã tự động,Cơ học - ít rủi ro
+A.6,A - Nguyen tac lap ho so,Danh mục phụ lục (mã - tên - số trang - phiên bản),T1,0,Tự sinh danh mục và đối chiếu file có thật,Output tự nhiên của hệ thống
+A.7,A - Nguyen tac lap ho so,Chữ ký - con dấu - ngày ban hành - bản dịch cần thiết,T2,0,Phát hiện vùng chữ ký/dấu (heuristic) - parse ngày - phát hiện thiếu bản dịch,Chỉ là gợi ý - bỏ sót dấu mờ rất dễ xảy ra
+1.1.1,1.1 Thong tin doanh nghiep,Biểu mẫu thông tin cơ bản của cơ sở,T1,0,Kiểm tra có biểu mẫu và đủ trường bắt buộc,
+1.1.2,1.1 Thong tin doanh nghiep,Bảng sản xuất kinh doanh 2 năm gần nhất,T1,0,Parse bảng và kiểm tra khoảng thời gian đủ 2 năm hoặc từ ngày thành lập,
+1.1.3,1.1 Thong tin doanh nghiep,Công suất thiết kế - sản lượng thực tế - sản lượng XK - thị trường,T2,0,Trích cột và đối chiếu tổng với 1.1.2 và D.2,Số liệu OCR sai là rủi ro chính
+1.1.4,1.1 Thong tin doanh nghiep,Đối chiếu số liệu với hồ sơ nội bộ và cơ quan thẩm quyền,T2,0,So khớp chéo các con số cùng tên ở nhiều file,Giá trị cao - dễ làm
+1.2.1,1.2 He thong quan ly,Quy trình phòng ngừa và kiểm soát dịch hại thực vật,T2,0,Tìm tài liệu SOP ứng viên và đoạn liên quan,Giống 8.3 và 12.x - cần map chung một tài liệu
+1.2.2,1.2 He thong quan ly,Hệ thống quản lý an toàn thực phẩm,T2,0,Tìm chứng chỉ (ISO 22000/HACCP/FSSC) lấy ngày hết hạn,Riêng chứng chỉ có thể tự động kiểm tra hạn
+1.2.3,1.2 He thong quan ly,Quy định quản lý nhân sự và vệ sinh cá nhân,T2,0,Tìm SOP,Gần 10.1.3
+1.2.4,1.2 He thong quan ly,Quy trình quản lý - sử dụng - lưu trữ hóa chất,T2,0,Tìm SOP,Giống 8.1.2
+1.2.5,1.2 He thong quan ly,Quy trình tiếp nhận - đánh giá - truy xuất nguyên liệu,T2,0,Tìm SOP,Giống 5.1.1 và 5.2.5
+1.2.6,1.2 He thong quan ly,Quy trình bảo quản và quản lý kho,T2,0,Tìm SOP,Giống 3.2 và 9.2
+1.2.7,1.2 He thong quan ly,Quy trình kiểm tra thành phẩm trước khi xuất khẩu,T2,0,Tìm SOP,Giống mục 11
+1.2.8,1.2 He thong quan ly,Quy trình xử lý/thu hồi sản phẩm không phù hợp,T2,0,Tìm SOP,Giống 9.1.3
+1.2.9,1.2 He thong quan ly,Quy trình truy xuất nguồn gốc,T2,0,Tìm SOP,Giống 5.2.5 và 9.1.1
+1.2.10,1.2 He thong quan ly,Có hồ sơ chứng minh các quy trình đang được thực hiện,T3,0,Gợi ý bản ghi ứng viên từng quy trình và hiển thị k/9,MỤC NGUY HIỂM NHẤT - không được tick tự động
+1.3.1,1.3 To chuc quan ly,Sơ đồ tổ chức nêu rõ bộ phận phụ trách sức khỏe thực vật và ATTP,T2,0,Tìm sơ đồ - đọc nhãn ô - đối chiếu danh sách nhân sự,
+1.3.2,1.3 To chuc quan ly,Danh sách nhân sự - chức danh - trách nhiệm - trình độ,T2,0,Trích bảng nhân sự,Dùng làm tham chiếu cho 10.1.2 và 10.2.2
+1.3.3,1.3 To chuc quan ly,Bằng cấp - chứng chỉ - hồ sơ kinh nghiệm nhân sự chủ chốt,T1,0,Tìm file chứng chỉ và lấy ngày,
+2.1.1,2.1 Vi tri nha may,Sơ đồ tổng thể nhà máy ghi tên khu vực chức năng,T2,0,Tìm sơ đồ và đọc chú thích,
+2.1.2,2.1 Vi tri nha may,Ảnh thực tế nhà máy và khu vực xung quanh,T2,0,Phát hiện có ảnh và gắn thẻ yếu 'ảnh nhà máy',Không thể xác nhận đúng thực tế
+2.1.3,2.1 Vi tri nha may,Mô tả khu vực xung quanh (đô thị - ngoại ô - công nghiệp - nông nghiệp),T2,0,Tìm đoạn mô tả và phân loại,
+2.1.4,2.1 Vi tri nha may,Rà soát nguồn ô nhiễm tiềm tàng và biện pháp kiểm soát,T3,0,Tìm đoạn nhắc đến nguồn ô nhiễm - chỉ để đánh dấu,Cần đánh giá tại chỗ
+2.2.1,2.2 So do nha xuong,Sơ đồ mặt bằng thể hiện luồng người,T2,0,Tìm sơ đồ và chú thích luồng,
+2.2.2,2.2 So do nha xuong,Luồng nguyên liệu - bán thành phẩm - thành phẩm,T2,0,Tìm trên sơ đồ luồng,Phụ thuộc sơ đồ - máy không verify
+2.2.3,2.2 So do nha xuong,Luồng nước và các khu vực/quy trình vệ sinh,T2,0,Tìm trên sơ đồ luồng,
+2.2.4,2.2 So do nha xuong,Phân khu sạch/bẩn hoặc khu vực yêu cầu vệ sinh khác nhau,T2,0,Tìm phân vùng trên sơ đồ,
+2.2.5,2.2 So do nha xuong,Diện tích - chiều cao - bố trí phù hợp công suất và hạn chế nhiễm chéo,T3,0,Trích số liệu diện tích nếu có,Cần chuyên gia
+2.2.6,2.2 So do nha xuong,Cửa/cửa sổ và lối ra có biện pháp ngăn côn trùng - chuột - chim - dơi,T3,0,Tìm đoạn/ảnh liên quan,Thực tế - kiểm tra tại chỗ
+3.1.1,3.1 Thiet bi,Danh mục thiết bị - chức năng - công suất thiết kế,T2,0,Trích bảng thiết bị,
+3.1.2,3.1 Thiet bi,Thiết bị phù hợp sản phẩm - quy trình - công suất khai báo,T2,0,So khớp số: tổng công suất thiết bị vs công suất khai báo 1.1.3,Chỉ là gợi ý
+3.1.3,3.1 Thiet bi,Hồ sơ bảo trì/hiệu chuẩn thiết bị,T1,0,Tìm bản ghi - parse ngày - kiểm tra còn hạn,
+3.2.1,3.2 Kho bao quan,Mô tả loại kho - điều kiện bảo quản - ngăn côn trùng,T2,0,Tìm mô tả,Gần 1.2.6
+3.2.2,3.2 Kho bao quan,Cách kiểm soát nhiệt độ và độ ẩm,T2,0,Tìm quy trình và bản ghi nhiệt độ/ẩm,
+3.2.3,3.2 Kho bao quan,Nếu có kho lạnh: nhiệt độ - vị trí theo dõi - tần suất - hồ sơ,T2,0,Có điều kiện theo thuộc tính case,Mẫu cho rule áp dụng có điều kiện
+3.2.4,3.2 Kho bao quan,Hồ sơ vệ sinh - kiểm tra - xử lý bất thường của kho,T2,0,Tìm bản ghi và parse ngày,
+4.1,4 Nuoc - da - hoi nuoc,Ảnh nguồn nước tự cấp hoặc công trình cấp nước thứ cấp,T2,0,Phát hiện có ảnh,Khối có điều kiện - chỉ áp dụng nếu có sử dụng
+4.2,4 Nuoc - da - hoi nuoc,Biện pháp bảo vệ nguồn/công trình cấp nước,T2,0,Tìm mô tả,
+4.3,4 Nuoc - da - hoi nuoc,Sơ đồ/danh sách điểm nước và kế hoạch giám sát bao quát mọi điểm,T2,0,Đếm điểm nước trong sơ đồ vs kế hoạch,
+4.4,4 Nuoc - da - hoi nuoc,Kế hoạch kiểm tra nước: chỉ tiêu (vi sinh) - phương pháp - tần suất - kết quả,T2,0,Tìm kế hoạch và phiếu kết quả,
+4.5,4 Nuoc - da - hoi nuoc,Nếu đá/hơi nước tiếp xúc trực tiếp: đưa vào kế hoạch giám sát,T2,0,Có điều kiện,
+4.6,4 Nuoc - da - hoi nuoc,Danh sách phụ gia lò hơi và tài liệu chứng minh dùng được cho thực phẩm,T2,1,Cần danh mục phụ gia được phép để đối chiếu,
+4.7,4 Nuoc - da - hoi nuoc,Ghi rõ Không áp dụng và lý do,T3,0,Chỉ nhắc - không tự điền,Quyết định của người
+5.1.1,5.1 Nguyen lieu phu gia,Quy trình tiếp nhận NL và phụ gia (tiêu chuẩn chấp nhận - lấy mẫu - xử lý lô không đạt),T2,0,Tìm SOP,Gần 1.2.5
+5.1.2,5.1 Nguyen lieu phu gia,Biểu mẫu/hồ sơ tiếp nhận NL và kiểm soát dịch hại khi NL vào nhà máy,T2,0,Tìm bản ghi,Gần 12.x
+5.1.3,5.1 Nguyen lieu phu gia,Kiểm tra dịch hại/kiểm dịch và tình trạng an toàn NL trước khi nhập khu vực SX,T2,0,Tìm hồ sơ kiểm tra,
+5.1.4,5.1 Nguyen lieu phu gia,Lưu hồ sơ tiếp nhận và xử lý dịch hại ít nhất 2 năm,T1,0,Parse ngày và tính độ phủ thời gian,Nhóm tự động hóa tốt nhất
+5.2.1,5.2 Nguon goc nguyen lieu,Danh sách nhà cung cấp - địa chỉ/vùng cung cấp - mặt hàng,T2,0,Trích bảng NCC,
+5.2.2,5.2 Nguon goc nguyen lieu,Chứng minh NL không từ vùng Trung Quốc báo cáo có dịch hại cần giám sát,T3,1,Cần danh sách vùng/dịch hại chuẩn,Nguồn động - phải cập nhật định kỳ
+5.2.3,5.2 Nguon goc nguyen lieu,Tài liệu chứng minh NCC đáp ứng điều kiện theo quy định địa phương,T2,0,Tìm tài liệu,
+5.2.4,5.2 Nguon goc nguyen lieu,Báo cáo kiểm nghiệm mới nhất theo tiêu chuẩn ATTP Trung Quốc,T2,1,Cần bảng chỉ tiêu/tiêu chuẩn (GB) để biết cần tìm gì,
+5.2.5,5.2 Nguon goc nguyen lieu,Quy trình đánh giá sự phù hợp và truy xuất NL đã mua,T2,0,Tìm SOP,Gần 1.2.5 và 1.2.9
+5.3.1,5.3 Phu gia thuc pham,Danh sách phụ gia: tên - mục đích - lượng sử dụng,T2,0,Trích bảng,Khối có điều kiện
+5.3.2,5.3 Phu gia thuc pham,Đối chiếu sử dụng với quy định/tiêu chuẩn Trung Quốc,T2,1,Nếu có bảng phụ gia được phép thì đối chiếu tự động rất tốt,
+5.3.3,5.3 Phu gia thuc pham,Ghi Không áp dụng nếu không sử dụng,T3,0,Chỉ nhắc,
+5.4.1,5.4 Bao bi va nhan,Tài liệu chứng minh bao bì tiếp xúc trực tiếp và bao bì ngoài phù hợp,T2,0,Tìm tài liệu,
+5.4.2,5.4 Bao bi va nhan,Mẫu nhãn thành phẩm dự kiến xuất khẩu,T1,0,Phát hiện có mẫu nhãn,
+5.4.3,5.4 Bao bi va nhan,Rà soát nhãn theo thỏa thuận/nghị định thư/biên bản ghi nhớ,T2,1,Có thể checklist hóa từng trường trên nhãn nếu có template,Cần template nhãn theo protocol
+6.1.1,6.1 HACCP va quy trinh,Sơ đồ quy trình cho từng sản phẩm dự kiến xuất khẩu,T2,0,Đếm số sản phẩm khai báo vs số sơ đồ,
+6.1.2,6.1 HACCP va quy trinh,Bảng phân tích mối nguy sinh học - hóa học - vật lý,T2,0,Tìm bảng phân tích,
+6.1.3,6.1 HACCP va quy trinh,Kế hoạch HACCP: CCP - giới hạn - biện pháp kiểm soát,T2,0,Tìm kế hoạch,
+6.1.4,6.1 HACCP va quy trinh,Mẫu hồ sơ theo dõi CCP,T2,0,Tìm bản ghi và parse ngày,
+6.1.5,6.1 HACCP va quy trinh,Mẫu hồ sơ xử lý sai lệch/khắc phục,T2,0,Tìm mẫu hồ sơ,
+6.1.6,6.1 HACCP va quy trinh,Hồ sơ xác minh - rà soát - cập nhật hệ thống HACCP,T2,0,Parse ngày cập nhật gần nhất,
+6.1.7,6.1 HACCP va quy trinh,Rà soát luồng sản xuất để phòng nhiễm chéo,T3,0,Chỉ tìm đoạn liên quan,Cần chuyên gia
+6.2.1,6.2 Mycotoxin,Kế hoạch kiểm soát mycotoxin cho NL - bán thành phẩm - thành phẩm lưu kho,T2,0,Tìm kế hoạch,
+6.2.2,6.2 Mycotoxin,Báo cáo lấy mẫu và kết quả kiểm nghiệm mycotoxin,T2,0,Tìm phiếu - trích analyte/kết quả/ngày,
+6.2.3,6.2 Mycotoxin,Đối chiếu kết quả với giới hạn/tiêu chuẩn ATTP Trung Quốc,T1,1,So sánh số - TỰ ĐỘNG RẤT TỐT NẾU CÓ BẢNG GIỚI HẠN; không có bảng thì thành T3 và rủi ro bịa số,QUAN TRỌNG: phải là bảng cấu hình không phải LLM tự nhớ
+6.3.1,6.3 Chat tang cuong,Mô tả công đoạn sử dụng và công thức/định lượng,T2,0,Tìm mô tả,Khối có điều kiện
+6.3.2,6.3 Chat tang cuong,Kế hoạch giám sát sản phẩm và kết quả giám sát,T2,0,Tìm kế hoạch và kết quả,
+6.3.3,6.3 Chat tang cuong,Ghi Không áp dụng nếu không sử dụng,T3,0,Chỉ nhắc,
+7.1,7 Ve sinh va khu trung,Quy trình vệ sinh/khử trùng theo khu vực và thiết bị,T2,0,Tìm SOP,
+7.2,7 Ve sinh va khu trung,Phương pháp - hóa chất - nồng độ - tần suất,T2,0,Trích thông tin và đối chiếu danh mục hóa chất 8.1.1,
+7.3,7 Ve sinh va khu trung,Hồ sơ thực hiện vệ sinh/khử trùng,T2,0,Tìm bản ghi và parse ngày/độ phủ,
+7.4,7 Ve sinh va khu trung,Phương pháp xác minh hiệu quả vệ sinh và lưu kết quả,T2,0,Tìm hồ sơ xác minh,
+7.5,7 Ve sinh va khu trung,Rà soát khả năng ngăn nhiễm chéo,T3,0,Chỉ tìm đoạn liên quan,Cần chuyên gia
+8.1.1,8.1 Hoa chat,Danh mục hóa chất dùng trong cơ sở và mục đích,T2,0,Trích bảng hóa chất,Dùng làm tham chiếu cho 7.2
+8.1.2,8.1 Hoa chat,Quy định bảo quản - cấp phát - sử dụng - kiểm soát,T2,0,Tìm SOP,Gần 1.2.4
+8.1.3,8.1 Hoa chat,Hóa chất được tách biệt - nhận diện - không gây nhiễm bẩn,T3,0,Chỉ tìm đoạn/ảnh,Thực tế tại xưởng
+8.2.1,8.2 Di vat,Quy trình phòng ngừa dị vật và hồ sơ xử lý sự cố,T2,0,Tìm SOP và bản ghi,
+8.2.2,8.2 Di vat,Đánh giá nguồn và đường xâm nhập dị vật (thủy tinh - kim loại - nhựa),T2,0,Tìm tài liệu đánh giá,Người vẫn phải đánh giá nội dung
+8.2.3,8.2 Di vat,Hồ sơ bảo trì - vệ sinh - quản lý hiện trường - giám sát,T2,0,Tìm bản ghi và parse ngày,
+8.2.4,8.2 Di vat,Biện pháp sàng/nam châm/máy dò kim loại và hồ sơ kiểm tra hiệu lực,T2,0,Tìm hồ sơ và kiểm tra tần suất kiểm tra hiệu lực,Ngày kiểm tra có thể tự động hóa
+8.3.1,8.3 Con trung chuot,Sơ đồ vị trí bẫy/điểm kiểm soát và mô tả phương pháp,T2,0,Tìm sơ đồ/ảnh vị trí bẫy,
+8.3.2,8.3 Con trung chuot,Nhật ký theo dõi - xử lý - xu hướng phát hiện,T2,0,Parse bản ghi - đếm - tính khoảng thời gian,Gần 1.2.1 và 12.x
+8.3.3,8.3 Con trung chuot,Nếu thuê đơn vị dịch vụ: hồ sơ năng lực/chứng nhận,T1,0,Tìm chứng nhận và kiểm tra hạn,
+8.4.1,8.4 Chat thai,Quy trình phân loại - lưu chứa - xử lý chất thải,T2,0,Tìm SOP,
+8.4.2,8.4 Chat thai,Nhãn/thùng chứa chất thải phân biệt với thùng chứa sản phẩm,T3,0,Chỉ tìm ảnh/đoạn mô tả,Thực tế
+8.4.3,8.4 Chat thai,Hồ sơ thu gom/xử lý và không gây ô nhiễm khu vực SX,T2,0,Tìm bản ghi và parse ngày,
+9.1.1,9.1 Truy xuat thu hoi,Quy trình truy xuất hai chiều NL - SX - TP và ngược lại,T2,0,Tìm SOP,Gần 1.2.9 và 5.2.5
+9.1.2,9.1 Truy xuat thu hoi,Dùng một mã lô thực tế làm ví dụ minh họa,T3,0,Có thể gợi ý 1 mã lô có đủ dữ liệu để làm ví dụ,Máy không thể tạo - người chọn
+9.1.3,9.1 Truy xuat thu hoi,Quy trình nhận diện - cách ly - xử lý - thu hồi SP không phù hợp,T2,0,Tìm SOP,Gần 1.2.8
+9.1.4,9.1 Truy xuat thu hoi,Hồ sơ diễn tập/kiểm tra truy xuất hoặc thu hồi nếu có,T2,0,Tìm bản ghi và parse ngày,
+9.2.1,9.2 Nhap xuat kho,Quy trình kiểm tra trước nhập kho và quản lý hàng trong kho,T2,0,Tìm SOP,Gần 1.2.6
+9.2.2,9.2 Nhap xuat kho,Biểu mẫu kiểm tra nhập kho - lưu kho - xuất kho,T2,0,Tìm biểu mẫu và bản ghi,
+9.2.3,9.2 Nhap xuat kho,Lưu hồ sơ nhập/xuất kho ít nhất 2 năm,T1,0,Parse ngày và tính độ phủ,
+10.1.1,10.1 Suc khoe va ve sinh,Quy định khám sức khỏe trước tuyển dụng/nhận việc,T2,0,Tìm quy định,
+10.1.2,10.1 Suc khoe va ve sinh,Hồ sơ khám sức khỏe trước làm việc và định kỳ,T2,0,Đối chiếu danh sách nhân sự 1.3.2 vs hồ sơ khám - parse ngày hạn,Có phần tự động hóa tốt
+10.1.3,10.1 Suc khoe va ve sinh,Quy định vệ sinh cá nhân - trang phục - hành vi,T2,0,Tìm quy định,Gần 1.2.3
+10.2.1,10.2 Dao tao,Kế hoạch đào tạo hằng năm,T1,0,Parse năm và kiểm tra có kế hoạch năm hiện tại,
+10.2.2,10.2 Dao tao,Nội dung - danh sách tham dự - kết quả đánh giá - hồ sơ lưu,T2,0,Tìm hồ sơ và đối chiếu danh sách nhân sự,
+10.2.3,10.2 Dao tao,Nội dung gồm yêu cầu kiểm dịch và tiêu chuẩn Trung Quốc,T3,1,Cần biết cụ thể yêu cầu nào phải có trong tài liệu đào tạo,
+10.3.1,10.3 Nang luc quan ly,Hồ sơ đào tạo nhân sự quản lý về quy định sở tại và Trung Quốc,T2,0,Tìm hồ sơ đào tạo,Gần 10.2
+10.3.2,10.3 Nang luc quan ly,Mô tả năng lực/trình độ phù hợp vị trí,T2,0,Tìm hồ sơ,
+10.3.3,10.3 Nang luc quan ly,Nhân sự quản lý có thể giải trình khi kiểm tra tại chỗ,T3,0,Không làm - chỉ ghi chú,Tuyệt đối không giao máy
+11.1,11 Tu kiem thanh pham,Danh mục chỉ tiêu kiểm tra thành phẩm (kiểm dịch thực vật + ATTP),T2,1,Cần danh mục chỉ tiêu theo mặt hàng để đối chiếu,
+11.2,11 Tu kiem thanh pham,Phương pháp và tần suất kiểm tra/lấy mẫu,T2,0,Trích thông tin,
+11.3,11 Tu kiem thanh pham,Quy trình kiểm tra trước xuất hàng và xử lý kết quả không đạt,T2,0,Tìm SOP,Gần 1.2.7
+11.4,11 Tu kiem thanh pham,Hồ sơ kiểm nghiệm/tự kiểm tra - lưu ít nhất 2 năm,T2,0,Tìm phiếu và tính độ phủ thời gian,
+11.5,11 Tu kiem thanh pham,Nếu có phòng thử nghiệm nội bộ: hồ sơ năng lực và chứng nhận,T1,0,Tìm chứng nhận (vd ISO 17025) và kiểm tra hạn,
+11.6,11 Tu kiem thanh pham,Nếu thuê phòng thử nghiệm: hợp đồng/phạm vi và năng lực/chứng nhận,T2,0,Đối chiếu phạm vi chứng nhận vs chỉ tiêu cần kiểm,Máy làm khá tốt
+12.1.1,12.1 Giam sat dich hai,Danh sách dịch hại kiểm dịch Trung Quốc quan tâm theo mặt hàng,T2,1,Bắt buộc có danh sách chuẩn theo protocol,Nguồn động - theo dõi định kỳ
+12.1.2,12.1 Giam sat dich hai,Kế hoạch giám sát tại khu vực sản xuất và kho,T2,0,Tìm kế hoạch,
+12.1.3,12.1 Giam sat dich hai,Hồ sơ theo dõi và kết quả - lưu ít nhất 2 năm,T2,0,Parse bản ghi và tính độ phủ,
+12.2.1,12.2 Nhan dien dich hai,Hồ sơ dịch hại phát hiện trong SX/lưu kho và kết quả xử lý,T2,0,Tìm bản ghi,
+12.2.2,12.2 Nhan dien dich hai,Nếu thuê tổ chức/chuyên gia: hồ sơ nhận diện và năng lực,T1,0,Tìm chứng nhận và kiểm tra hạn,
+12.2.3,12.2 Nhan dien dich hai,Lưu hồ sơ liên quan ít nhất 2 năm,T1,0,Tính độ phủ thời gian,
+12.3.1,12.3 Phong tru dich hai,Kế hoạch và hồ sơ thực hiện biện pháp phòng trừ,T2,0,Tìm kế hoạch và bản ghi,
+12.3.2,12.3 Phong tru dich hai,Ghi nhận ngày - vị trí - phương pháp - hóa chất - người thực hiện - kết quả,T2,0,Parse 6 trường bắt buộc trong bản ghi,Kiểm tra đủ 6 trường - tự động hóa được
+12.3.3,12.3 Phong tru dich hai,Lưu hồ sơ ít nhất 2 năm,T1,0,Tính độ phủ thời gian,
+12.4.1,12.4 Hun trung,Mô tả phương pháp hun trùng và đối chiếu yêu cầu Trung Quốc,T3,1,Cần yêu cầu cụ thể của TQ về hun trùng,Khối có điều kiện
+12.4.2,12.4 Hun trung,Hồ sơ năng lực/điều kiện của tổ chức và nhân sự thực hiện,T1,0,Tìm chứng nhận và kiểm tra hạn,
+12.4.3,12.4 Hun trung,Biên bản/chứng thư hun trùng theo lô hàng nếu áp dụng,T2,0,Tìm chứng thư và parse ngày/lô,
+12.4.4,12.4 Hun trung,Ghi Không áp dụng và lý do nếu không cần,T3,0,Chỉ nhắc,
+13.1,13 Cam ket va xac nhan,Người đại diện pháp luật ký cam kết,T2,0,Phát hiện vùng chữ ký - gợi ý,Heuristic - dễ sai
+13.2,13 Cam ket va xac nhan,Đóng dấu doanh nghiệp theo biểu mẫu,T2,0,Phát hiện vùng dấu - gợi ý,Heuristic - dễ sai
+13.3,13 Cam ket va xac nhan,Cơ quan có thẩm quyền ký xác nhận,T2,0,Tìm phần xác nhận và chữ ký,Chỉ xuất hiện sau khi cơ quan duyệt
+13.4,13 Cam ket va xac nhan,Đóng dấu cơ quan có thẩm quyền,T2,0,Phát hiện vùng dấu,
+13.5,13 Cam ket va xac nhan,Kiểm tra bản cuối: đủ phụ lục - đánh số - không mâu thuẫn - mọi mục có trạng thái,T1,0,TỔNG HỢP TRẠNG THÁI - máy làm tốt nhất,Output tự nhiên của hệ thống
+C.1,C Ho so luu 2 nam,Hồ sơ tiếp nhận nguyên liệu và kiểm soát dịch hại NL,T1,0,Parse ngày và tính độ phủ >= 2 năm,Trùng 5.1.4
+C.2,C Ho so luu 2 nam,Hồ sơ kiểm tra nhập kho - lưu kho - xuất kho,T1,0,Tính độ phủ,Trùng 9.2.3
+C.3,C Ho so luu 2 nam,Hồ sơ kiểm nghiệm/tự kiểm tra thành phẩm,T1,0,Tính độ phủ,Trùng 11.4
+C.4,C Ho so luu 2 nam,Hồ sơ giám sát dịch hại kiểm dịch quan tâm,T1,0,Tính độ phủ,Trùng 12.1.3
+C.5,C Ho so luu 2 nam,Hồ sơ nhận diện dịch hại,T1,0,Tính độ phủ,Trùng 12.2.3
+C.6,C Ho so luu 2 nam,Hồ sơ thực hiện biện pháp phòng trừ dịch hại,T1,0,Tính độ phủ,Trùng 12.3.3
+D.1,D Kiem tra nhanh,Mọi loại sản phẩm thuộc phạm vi được phép,T2,1,Cần danh mục được phép để đối chiếu,Gần A.2
+D.2,D Kiem tra nhanh,Số liệu sản lượng/công suất khớp với hồ sơ và cơ quan,T1,0,So khớp số chéo tài liệu,Tự động hóa tốt
+D.3,D Kiem tra nhanh,Sơ đồ và ảnh phản ánh đúng cơ sở đang vận hành,T3,0,Không làm - chỉ ghi chú,Cần kiểm tra tại chỗ
+D.4,D Kiem tra nhanh,Quy trình có hồ sơ thực hiện - hồ sơ có ngày/người/kết quả,T2,0,Kiểm tra 3 trường bắt buộc trong bản ghi,Gần 1.2.10
+D.5,D Kiem tra nhanh,Báo cáo thử nghiệm và tiêu chuẩn đối chiếu phù hợp,T2,1,Cần bảng tiêu chuẩn theo mặt hàng,
+D.6,D Kiem tra nhanh,Các mục Không áp dụng đã ghi rõ lý do,T1,0,Kiểm tra ô lý do không rỗng,Dễ làm
+D.7,D Kiem tra nhanh,Đã đánh số phụ lục và lập danh mục,T1,0,Đối chiếu mã vs file,Gần A.5-A.6
+D.8,D Kiem tra nhanh,Chữ ký và con dấu của doanh nghiệp/cơ quan,T2,0,Phát hiện chữ ký/dấu - gợi ý,

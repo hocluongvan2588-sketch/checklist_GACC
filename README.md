@@ -24,6 +24,8 @@ Kho tài liệu phục vụ việc **đánh giá tính khả thi** và thiết k
 | [C](docs/phu-luc/C_mau_requirement_pack.yaml) | Mẫu cấu trúc requirement pack (minh hoạ cấu hình — **chưa xác minh**) |
 | [D](docs/phu-luc/D_dang_ky_nguon_tham_chieu.md) | Đăng ký nguồn tham chiếu, phân loại độ tin cậy A/B/C, quy tắc quản trị nguồn |
 | [E](docs/phu-luc/E_ke_hoach_danh_gia_chat_luong_AI.md) | Kế hoạch đo chất lượng AI (golden set, chỉ số, ngưỡng, test bất biến) |
+| [F](docs/phu-luc/F_phan_loai_148_muc_checklist.md) | **Phân loại 148 mục checklist ngũ cốc**: T1/T2/T3, 13 mục cần dữ liệu tham chiếu, 7 phát hiện, thứ tự ưu tiên làm |
+| [F-dữ liệu](docs/phu-luc/F_du_lieu_phan_loai.csv) | Dữ liệu thô của bảng phân loại (mở bằng Excel để tự chỉnh/sửa) |
 
 ## Ba điểm cần nhớ
 
